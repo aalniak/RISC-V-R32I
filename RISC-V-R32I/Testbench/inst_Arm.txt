@@ -1,0 +1,39 @@
+0x00000000:  fd000093    addi   x1,  x0,  -5      # x1 = x0 + -5
+0x00000004:  002080b3    add    x2,  x1,  x1      # x2 = x1 + x1
+0x00000008:  40208133    sub    x3,  x1,  x2      # x3 = x1 - x2
+0x0000000c:  002182b3    or     x4,  x3,  x2      # x4 = x3 | x2
+0x00000010:  002282b3    and    x5,  x4,  x2      # x5 = x4 & x2
+0x00000014:  004283b3    xor    x6,  x5,  x4      # x6 = x5 ^ x4
+0x00000018:  0fa202b7    ori    x7,  x4,  250     # x7 = x4 | 250
+0x0000001c:  f38a850b    andi   x8,  x7,  -200    # x8 = x7 & -200
+0x00000020:  03148293    xori   x9,  x8,  49      # x9 = x8 ^ 49
+0x00000024:  003282b3    sll    x10, x8,  x3      # x10 = x8 << x3
+0x00000028:  003292b3    srl    x11, x8,  x3      # x11 = x8 >> x3
+0x0000002c:  0033a2b3    sra    x12, x8,  x3      # x12 = x8 >>> x3
+0x00000030:  00529293    slli   x10, x8,  5       # x10 = x8 << 5
+0x00000034:  0053a293    srli   x11, x8,  5       # x11 = x8 >> 5
+0x00000038:  005422b3    srai   x12, x8,  5       # x12 = x8 >>> 5
+0x0000003c:  0032e3b3    slt    x13, x4,  x3      # set x13 to 1 if x4 < x3
+0x00000040:  00526393    slti   x14, x4,  5       # set x14 to 1 if x4 < 5
+0x00000044:  0032f3b3    sltu   x15, x4,  x3      # set x15 to 1 if x4 < x3
+0x00000048:  00527293    sltiu  x16, x4,  5       # set x16 to 1 if x4 < 5
+0x0000004c:  0287d063    blt    x13, x14, 40      # if (x13 < x14) jump 40
+0x00000050:  0286d0e3    bge    x12, x13, 40      # if (x12 >= x13) jump 40
+0x00000054:  0287f063    bltu   x13, x13, 40      # if (x13 < x13) jump 40
+0x00000058:  028180e3    bgeu   x0,  x3,  40      # if (x0 >= x3) jump 40
+0x0000005c:  0087d063    bne    x13, x14, 8       # if (x13 != x14) jump 8
+0x00000060:  0047c063    beq    x13, x14, 4       # if (x13 == x14) jump 4
+0x00000064:  fd000093    addi   x1,  x0,  -5      # x1 = x0 + -5
+0x00000068:  05c00393    jalr   x13, x0,  92      # jump 92 + x0, set x13 to the next instruction
+0x0000006c:  004007af    jal    x15, 4            # jump 4, set x15 to the next instruction
+0x00000070:  00c3a023    sw     x12, x3, 10       # store word from x12 to memory address x3 + 10
+0x00000074:  0143a223    sh     x12, x3, 20       # store halfword from x12 to memory address x3 + 20
+0x00000078:  01e3a423    sb     x12, x3, 30       # store byte from x12 to memory address x3 + 30
+0x0000007c:  00a30283    lw     x16, x3, 10       # load word from memory address x3 + 10 to x16
+0x00000080:  014302a3    lh     x17, x3, 20       # load halfword from memory address x3 + 20 to x17
+0x00000084:  014312a3    lhu    x18, x3, 20       # load unsigned halfword from memory address x3 + 20 to x18
+0x00000088:  01e30223    lb     x19, x3, 30       # load byte from memory address x3 + 30 to x19
+0x0000008c:  01e31223    lbu    x20, x3, 30       # load unsigned byte from memory address x3 + 30 to x20
+0x00000090:  003000b7    lui    x21, 3            # load upper immediate 3 to x21
+0x00000094:  00301097    auipc  x22, 3            # add upper immediate pc-relative 3 to x22
+0x00000098:  00108297    xorid  x23, x1, 1        # XOR student id's
